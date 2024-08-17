@@ -21,6 +21,8 @@ function App() {
       } catch (error) {
         console.error('Error parsing savedData:', error);
         localStorage.removeItem('lastData'); // Remove corrupted data
+        setPrompt('Earth');
+        getData(prompt);
       }
     }
   }, []);
