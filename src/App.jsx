@@ -25,7 +25,7 @@ function App() {
   };
 
   async function getData(currentPrompt) {
-    const url = 'https://4k-wallpapers-scraper.vercel.app/api';
+    const url = import.meta.env.VITE_API;
     setIsLoading(true);
     try {
       const res = await axios.post(url, { prompt: currentPrompt });
