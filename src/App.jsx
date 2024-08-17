@@ -4,7 +4,7 @@ import axios from 'axios';
 import Loader from './Loader';
 
 function App() {
-  const [prompt, setPrompt] = useState('');
+  const [prompt, setPrompt] = useState('Earth');
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef(null);
@@ -14,17 +14,7 @@ function App() {
   
 
   useEffect(() => {
-    const savedData = localStorage.getItem('lastData');
-    if (savedData) {
-      try {
-        setData(JSON.parse(savedData));
-      } catch (error) {
-        console.error('Error parsing savedData:', error);
-        localStorage.removeItem('lastData'); // Remove corrupted data
-        setPrompt('Earth');
-        getData(prompt);
-      }
-    }
+   getData(prompt);
   }, []);
   
 
