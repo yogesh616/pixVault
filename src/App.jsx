@@ -33,7 +33,7 @@ function App() {
   };
 
   async function getData(currentPrompt) {
-    const url = 'http://localhost:3000/api';
+    const url = 'https://4k-wallpapers-scraper.vercel.app/api';
     setIsLoading(true);
     try {
       const res = await axios.post(url, { prompt: currentPrompt });
